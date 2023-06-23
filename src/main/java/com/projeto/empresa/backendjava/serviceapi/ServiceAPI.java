@@ -1,4 +1,4 @@
-package com.projeto.empresa.backendjava.service;
+package com.projeto.empresa.backendjava.serviceapi;
 
 public class ServiceAPI {
     public static String apenasNumeros(String value){

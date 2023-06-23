@@ -5,7 +5,8 @@ import com.projeto.empresa.backendjava.pessoa.pessoajuridica.dto.PessoaJuridicaD
 import com.projeto.empresa.backendjava.pessoa.pessoajuridica.model.PessoaJuridica;
 import com.projeto.empresa.backendjava.pessoa.pessoajuridica.repository.PessoaJuridicaRepository;
 import com.projeto.empresa.backendjava.pessoa.pessoajuridica.service.PessoaJuridicaService;
-import com.projeto.empresa.backendjava.service.ServiceAPI;
+import com.projeto.empresa.backendjava.serviceapi.ServiceAPI;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
