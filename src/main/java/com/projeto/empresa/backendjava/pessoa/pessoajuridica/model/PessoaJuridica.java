@@ -1,4 +1,4 @@
-package com.projeto.empresa.backendjava.pessoa.pessoajuridica.model.dto;
+package com.projeto.empresa.backendjava.pessoa.pessoajuridica.model;
 
 
 import com.projeto.empresa.backendjava.pessoa.Pessoa;
@@ -32,7 +32,7 @@ public class PessoaJuridica extends Pessoa {
     private Long pessoaJuridicaId;
 
     @Column(name = "peju_cnpj", length = 14, unique = true, nullable = false)
-    private String pessoaCpf;
+    private String pessoaCnpj;
 
     @Column(name = "peju_nome_fantasia", length = 150)
     private String pessoaNomeFantasia;
