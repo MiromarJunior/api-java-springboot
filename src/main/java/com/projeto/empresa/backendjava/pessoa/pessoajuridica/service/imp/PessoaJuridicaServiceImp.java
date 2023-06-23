@@ -25,10 +25,6 @@ public class PessoaJuridicaServiceImp implements PessoaJuridicaService {
     @Autowired
     PessoaJuridicaRepository repo;
 
-
-
-
-
     @Override
     public List<PessoaJuridica> getAllPeju() {
         List<PessoaJuridica> pessoas = repo.findAll();
@@ -39,9 +35,6 @@ public class PessoaJuridicaServiceImp implements PessoaJuridicaService {
     @Override
     public PessoaJuridica createPeju(PessoaJuridicaDTO dto) {
         validaCnpj(dto.getPessoaCnpj());
-
-
-
         PessoaJuridica pessoa = new PessoaJuridica();
         BeanUtils.copyProperties(dto, pessoa,"pessoaCnpj","pessoaFonecelular","pessoaDtCadastro","pessoaJuridicaId");
         pessoa.setPessoaCnpj(ServiceAPI.apenasNumeros(dto.getPessoaCnpj()));
@@ -54,7 +47,7 @@ public class PessoaJuridicaServiceImp implements PessoaJuridicaService {
         String cnpjString = cnpj.replaceAll("\\D+", "");
         if(repo.findByPessoaCnpj(cnpjString).isPresent()){
             throw new ResponseStatusException(HttpStatus.CONFLICT,
-                    "Erro ao Cadastrar ou Atualizar Pessoa - CNPJ já Cadastrado: ");
+                    "Erro ao Cadastrar ou Atualizar Pessoa - CNPJ já Cadastrado: "+cnpj);
         }
     }
 
@@ -68,15 +61,11 @@ public class PessoaJuridicaServiceImp implements PessoaJuridicaService {
     @Override
     public PessoaJuridica updatePeju(Long id, PessoaJuridicaDTO dto) {
         PessoaJuridica pessoa = getByPejuId(id);
-
-        BeanUtils.copyProperties(dto, pessoa,"pessoaCnpj","pessoaJuridicaId","pessoaFonecelular","pessoaFoneFixo","pessoaDtCadastro");        
-        
+        BeanUtils.copyProperties(dto, pessoa,"pessoaCnpj","pessoaJuridicaId","pessoaFonecelular","pessoaFoneFixo","pessoaDtCadastro");          
         pessoa.setPessoaFoneCelular(ServiceAPI.apenasNumeros(dto.getPessoaFoneCelular()));
         pessoa.setPessoaFoneFixo(ServiceAPI.apenasNumeros(dto.getPessoaFoneFixo()));
         pessoa.setPessoaDtAtualizacao(LocalDateTime.now());
         return repo.save(pessoa);
-
-
     }
 
     @Override
@@ -86,6 +75,5 @@ public class PessoaJuridicaServiceImp implements PessoaJuridicaService {
          Map<String, Object> resposta = new HashMap<>();
         resposta.put("mensagem", "Registro Excluído com Sucesso!");
        return resposta;
-
     }
 }

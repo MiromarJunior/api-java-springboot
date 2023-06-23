@@ -22,14 +22,14 @@ public class PessoaJuridicaController {
     PessoaJuridicaServiceImp service;
 
     @GetMapping
-    public ResponseEntity<List<PessoaJuridica>> getAllPeju(){
+    public ResponseEntity<List<PessoaJuridica>> getAllPeju() {
         List<PessoaJuridica> pessoas = service.getAllPeju();
         return ResponseEntity.status(200).body(pessoas);
     }
 
     @PostMapping
-    public ResponseEntity<PessoaJuridica> saveEntity(@Valid @RequestBody PessoaJuridicaDTO dto){
-        PessoaJuridica pessoa =  service.createPeju(dto);
+    public ResponseEntity<PessoaJuridica> saveEntity(@Valid @RequestBody PessoaJuridicaDTO dto) {
+        PessoaJuridica pessoa = service.createPeju(dto);
         URI uri = ServletUriComponentsBuilder
                 .fromCurrentRequest()
                 .path("/{id}")
@@ -39,24 +39,23 @@ public class PessoaJuridicaController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<PessoaJuridica> updateEntity(@Valid @PathVariable Long id, @RequestBody PessoaJuridicaDTO dto){
+    public ResponseEntity<PessoaJuridica> updateEntity(@Valid @PathVariable Long id,
+            @RequestBody PessoaJuridicaDTO dto) {
         PessoaJuridica pessoa = service.updatePeju(id, dto);
         return ResponseEntity.ok().body(pessoa);
     }
 
-        @GetMapping("/{id}")
-    public ResponseEntity<PessoaJuridica> findByIdEntity(@PathVariable Long id){
+    @GetMapping("/{id}")
+    public ResponseEntity<PessoaJuridica> findByIdEntity(@PathVariable Long id) {
         PessoaJuridica pessoa = service.getByPejuId(id);
         return ResponseEntity.ok().body(pessoa);
     }
 
-            @DeleteMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> deleteEntity(@PathVariable Long id){
-              Map<String, Object> resposta = service.deletePeju(id);        
-     return  ResponseEntity.ok().body(resposta);
-        
-        
-    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Map<String, Object>> deleteEntity(@PathVariable Long id) {
+        Map<String, Object> resposta = service.deletePeju(id);
+        return ResponseEntity.ok().body(resposta);
 
+    }
 
 }
