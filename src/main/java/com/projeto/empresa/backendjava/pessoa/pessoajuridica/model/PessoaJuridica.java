@@ -29,6 +29,7 @@ import lombok.NoArgsConstructor;
 @Entity
 public class PessoaJuridica extends Pessoa {
 
+   
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long pessoaJuridicaId;

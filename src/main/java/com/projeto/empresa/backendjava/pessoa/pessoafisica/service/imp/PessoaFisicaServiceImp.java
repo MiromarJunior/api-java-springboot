@@ -106,7 +106,7 @@ public class PessoaFisicaServiceImp implements PessoaFisicaService {
         getPessoaFisicaById(id);
         repository.deleteById(id);
         Map<String, Object> resposta = new HashMap<>();
-        resposta.put("mensagem", "Aluno Excluído com Sucesso!");
+        resposta.put("mensagem", "Registro Excluído com Sucesso!");
        return resposta;
     }
 

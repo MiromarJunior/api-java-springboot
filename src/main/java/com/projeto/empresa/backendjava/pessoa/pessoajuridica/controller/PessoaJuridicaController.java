@@ -5,12 +5,14 @@ import com.projeto.empresa.backendjava.pessoa.pessoajuridica.model.PessoaJuridic
 import com.projeto.empresa.backendjava.pessoa.pessoajuridica.service.imp.PessoaJuridicaServiceImp;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/pessoaJuridica")
@@ -26,7 +28,7 @@ public class PessoaJuridicaController {
     }
 
     @PostMapping
-    public ResponseEntity<PessoaJuridica> savEntity(@Valid @RequestBody PessoaJuridicaDTO dto){
+    public ResponseEntity<PessoaJuridica> saveEntity(@Valid @RequestBody PessoaJuridicaDTO dto){
         PessoaJuridica pessoa =  service.createPeju(dto);
         URI uri = ServletUriComponentsBuilder
                 .fromCurrentRequest()
@@ -34,6 +36,26 @@ public class PessoaJuridicaController {
                 .buildAndExpand(pessoa.getPessoaJuridicaId())
                 .toUri();
         return ResponseEntity.created(uri).body(pessoa);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<PessoaJuridica> updateEntity(@Valid @PathVariable Long id, @RequestBody PessoaJuridicaDTO dto){
+        PessoaJuridica pessoa = service.updatePeju(id, dto);
+        return ResponseEntity.ok().body(pessoa);
+    }
+
+        @GetMapping("/{id}")
+    public ResponseEntity<PessoaJuridica> findByIdEntity(@PathVariable Long id){
+        PessoaJuridica pessoa = service.getByPejuId(id);
+        return ResponseEntity.ok().body(pessoa);
+    }
+
+            @DeleteMapping("/{id}")
+    public ResponseEntity<Map<String, Object>> deleteEntity(@PathVariable Long id){
+              Map<String, Object> resposta = service.deletePeju(id);        
+     return  ResponseEntity.ok().body(resposta);
+        
+        
     }
 
 
