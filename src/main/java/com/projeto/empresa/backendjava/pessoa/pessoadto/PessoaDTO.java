@@ -1,4 +1,4 @@
-package com.projeto.empresa.backendjava.pessoa.pessoaDTO;
+package com.projeto.empresa.backendjava.pessoa.pessoadto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

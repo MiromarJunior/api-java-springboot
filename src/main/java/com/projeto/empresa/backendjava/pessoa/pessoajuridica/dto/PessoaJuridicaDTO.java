@@ -1,17 +1,21 @@
 package com.projeto.empresa.backendjava.pessoa.pessoajuridica.dto;
 
-import com.projeto.empresa.backendjava.pessoa.pessoaDTO.PessoaDTO;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.br.CNPJ;
+
+import com.projeto.empresa.backendjava.pessoa.pessoadto.PessoaDTO;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@EqualsAndHashCode(callSuper=false)
 public class PessoaJuridicaDTO extends PessoaDTO {
+    
 
     @NotBlank(message ="Campo obrigatório")
     @CNPJ

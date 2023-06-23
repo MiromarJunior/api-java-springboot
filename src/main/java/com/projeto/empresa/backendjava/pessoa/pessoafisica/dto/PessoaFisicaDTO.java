@@ -1,24 +1,23 @@
 package com.projeto.empresa.backendjava.pessoa.pessoafisica.dto;
 
-import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
-import com.projeto.empresa.backendjava.pessoa.pessoaDTO.PessoaDTO;
 import org.hibernate.validator.constraints.br.CPF;
 
-import jakarta.validation.constraints.Email;
+import com.projeto.empresa.backendjava.pessoa.pessoadto.PessoaDTO;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Past;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@EqualsAndHashCode(callSuper=false)
 public class PessoaFisicaDTO extends PessoaDTO {
 
     private Long pessoaFisicaId;

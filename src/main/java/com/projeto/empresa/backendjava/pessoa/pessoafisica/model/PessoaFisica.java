@@ -16,6 +16,7 @@ import lombok.*;
 @NoArgsConstructor
 @Data
 @Entity
+@EqualsAndHashCode(callSuper=false)
 
 
     @AttributeOverride(name = "pessoaNome", column = @Column(name = "pefi_nome", length = 150, nullable = false))
