@@ -1,14 +1,12 @@
 package com.projeto.empresa.backendjava.pessoa.pessoajuridica.dto;
 
 import com.projeto.empresa.backendjava.pessoa.pessoaDTO.PessoaDTO;
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.br.CNPJ;
-import org.hibernate.validator.constraints.br.CPF;
 
 @AllArgsConstructor
 @NoArgsConstructor

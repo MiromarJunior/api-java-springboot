@@ -1,7 +1,5 @@
 package com.projeto.empresa.backendjava.pessoa.pessoajuridica.controller;
 
-import com.projeto.empresa.backendjava.pessoa.pessoafisica.dto.PessoaFisicaDTO;
-import com.projeto.empresa.backendjava.pessoa.pessoafisica.model.PessoaFisica;
 import com.projeto.empresa.backendjava.pessoa.pessoajuridica.dto.PessoaJuridicaDTO;
 import com.projeto.empresa.backendjava.pessoa.pessoajuridica.model.PessoaJuridica;
 import com.projeto.empresa.backendjava.pessoa.pessoajuridica.service.imp.PessoaJuridicaServiceImp;

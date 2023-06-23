@@ -5,8 +5,10 @@ import com.projeto.empresa.backendjava.pessoa.Pessoa;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+@EqualsAndHashCode(callSuper = true)
 @AttributeOverride(name = "pessoaNome", column = @Column(name = "peju_razao_social", length = 150, nullable = false))
 @AttributeOverride(name = "pessoaFoneCelular", column = @Column(name = "peju_fone_celular", length = 20))
 @AttributeOverride(name = "pessoaFoneFixo", column = @Column(name = "peju_fone_fixo", length = 20))
