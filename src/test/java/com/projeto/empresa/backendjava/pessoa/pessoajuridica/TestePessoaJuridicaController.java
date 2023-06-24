@@ -24,7 +24,7 @@ import com.projeto.empresa.backendjava.pessoa.pessoajuridica.model.PessoaJuridic
 import com.projeto.empresa.backendjava.pessoa.pessoajuridica.service.imp.PessoaJuridicaServiceImp;
 
 @SpringBootTest
-class TestePessoaJuridica {
+class TestePessoaJuridicaController {
 
     @Mock
     private PessoaJuridicaServiceImp service;

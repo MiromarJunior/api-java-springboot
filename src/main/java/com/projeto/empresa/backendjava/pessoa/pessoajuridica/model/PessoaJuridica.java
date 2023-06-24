@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AttributeOverride(name = "pessoaNome", column = @Column(name = "peju_razao_social", length = 150, nullable = false))
 @AttributeOverride(name = "pessoaFoneCelular", column = @Column(name = "peju_fone_celular", length = 20))
 @AttributeOverride(name = "pessoaFoneFixo", column = @Column(name = "peju_fone_fixo", length = 20))
-@AttributeOverride(name = "pessoaEmail", column = @Column(name = "peju_email", length = 150, nullable = false, unique = true))
+@AttributeOverride(name = "pessoaEmail", column = @Column(name = "peju_email", length = 150, nullable = false))
 @AttributeOverride(name = "pessoaCep", column = @Column(name = "peju_cep", length = 8))
 @AttributeOverride(name = "pessoaLogradouro", column = @Column(name = "peju_logradouro", length = 200))
 @AttributeOverride(name = "pessoaLogradouroNr", column = @Column(name = "peju_logradouro_nr", length = 10))
@@ -21,6 +21,7 @@ import lombok.NoArgsConstructor;
 @AttributeOverride(name = "pessoaUf", column = @Column(name = "peju_uf", length = 2))
 @AttributeOverride(name = "pessoaDtCadastro", column = @Column(name = "peju_dt_cadastro", length = 2))
 @AttributeOverride(name = "pessoaDtAtualizacao", column = @Column(name = "peju_dt_atualizacao", length = 2))
+@AttributeOverride(name = "pessoaComplemento", column = @Column(name = "peju_complemento", length = 200))
 
 
 @AllArgsConstructor

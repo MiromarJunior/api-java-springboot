@@ -27,7 +27,7 @@ public class PessoaFisicaServiceImp implements PessoaFisicaService {
     @Autowired
     private PessoaFisicaRepository repository;
 
-    private String apenasNumeros(String value){
+    public String apenasNumeros(String value){
         if(value != null){
             return value.replaceAll("\\D+", "");
         }else{
@@ -50,7 +50,7 @@ public class PessoaFisicaServiceImp implements PessoaFisicaService {
         validaCpf(dto.getPessoaCpf());
       
         PessoaFisica pessoa = new PessoaFisica();
-        BeanUtils.copyProperties(dto, pessoa,"pessoaCpf","pessoaFonecelular","pessoaDtCadastro");       
+        BeanUtils.copyProperties(dto, pessoa,"pessoaCpf","pessoaFonecelular","pessoaFisicaId","pessoaDtCadastro","pessoaDtAtualizacao");       
         pessoa.setPessoaCpf(apenasNumeros(dto.getPessoaCpf()));      
         pessoa.setPessoaFoneCelular(apenasNumeros(dto.getPessoaFoneCelular()));      
         pessoa.setPessoaDtCadastro(LocalDateTime.now());
@@ -87,6 +87,8 @@ public class PessoaFisicaServiceImp implements PessoaFisicaService {
         pessoa.setPessoaCep(apenasNumeros(dto.getPessoaCep()));
       
         pessoa.setPessoaFoneFixo(apenasNumeros(dto.getPessoaFoneFixo()));
+
+        
 
    
         return repository.save(pessoa);

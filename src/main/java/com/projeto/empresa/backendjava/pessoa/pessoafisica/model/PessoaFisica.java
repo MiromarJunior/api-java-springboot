@@ -31,7 +31,7 @@ import lombok.*;
     @AttributeOverride(name = "pessoaUf", column = @Column(name = "pefi_uf",length = 2))
     @AttributeOverride(name = "pessoaDtCadastro", column = @Column(name = "pefi_dt_cadastro",length = 2))
     @AttributeOverride(name = "pessoaDtAtualizacao", column = @Column(name = "pefi_dt_atualizacao",length = 2))
-    
+    @AttributeOverride(name = "pessoaComplemento", column = @Column(name = "pefi_complemento", length = 200))
 
 public class PessoaFisica extends Pessoa{
 

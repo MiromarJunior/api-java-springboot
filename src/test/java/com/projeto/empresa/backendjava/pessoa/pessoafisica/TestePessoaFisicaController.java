@@ -22,7 +22,7 @@ import com.projeto.empresa.backendjava.pessoa.pessoafisica.model.PessoaFisica;
 import com.projeto.empresa.backendjava.pessoa.pessoafisica.service.imp.PessoaFisicaServiceImp;
 
 @SpringBootTest
-public class TestePessoaFisica {
+class TestePessoaFisicaController {
 
     @Mock
     private PessoaFisicaServiceImp service;

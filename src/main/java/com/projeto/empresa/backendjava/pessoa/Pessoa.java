@@ -36,5 +36,7 @@ public abstract class Pessoa {
 
     protected String pessoaUf;
 
+    protected String pessoaComplemento;
+
     
 }

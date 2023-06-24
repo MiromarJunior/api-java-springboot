@@ -50,4 +50,7 @@ public abstract class PessoaDTO {
 
     @Size(max = 2, message = "'${validatedValue}' Tamanho máximo {max} caracteres.")
     protected String pessoaUf;
+
+     @Size(max = 200, message = "'${validatedValue}' Tamanho máximo {max} caracteres.")
+    protected String pessoaComplemento;
 }

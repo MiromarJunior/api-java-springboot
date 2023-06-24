@@ -26,7 +26,7 @@ import com.projeto.empresa.backendjava.pessoa.pessoafisica.service.imp.PessoaFis
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/pessoa")
+@RequestMapping("/pessoaFisica")
 public class PessoaFisicaController {
 
     @Autowired

@@ -57,6 +57,9 @@ public class PessoaFisicaUpdateDTO {
     @Past(message = "Data não pode ser hoje!")
     private LocalDate pessoaDtNascimento;
 
+        @Size(max = 200, message = "'${validatedValue}' Tamanho máximo {max} caracteres.")
+    private String pessoaComplemento;
+
 
     
 }
